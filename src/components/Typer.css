@@ -1,0 +1,12 @@
+.type-text {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.type-text .left {
+  color: #ddd;
+}
+
+.type-text .right {
+  color: #000;
+}
