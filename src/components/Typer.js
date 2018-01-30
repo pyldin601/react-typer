@@ -12,6 +12,10 @@ export default class Typer extends Component {
     };
   }
 
+  isDone() {
+    return this.state.right.length === 0;
+  }
+
   componentDidMount() {
     document.addEventListener('keypress', this.onKeyPress.bind(this));
   }
@@ -28,6 +32,10 @@ export default class Typer extends Component {
   }
 
   render() {
+    if (this.isDone()) {
+      return this.renderDone();
+    }
+
     return (
       <div>
         <div className="type-text">
@@ -40,5 +48,9 @@ export default class Typer extends Component {
         </div>
       </div>
     );
+  }
+
+  renderDone() {
+    return <div>Done!</div>;
   }
 }
